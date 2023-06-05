@@ -73,4 +73,16 @@ jacocoTestReport {
         csv.required = false
         html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
     }
+    finalizedBy jacocoTestCoverageVerification
 }
+
+jacocoTestCoverageVerification{
+  violationRules{
+   rule{
+     enabled=true
+     limit{
+      minimum=0.25
+      }
+   }
+  }
+}  
